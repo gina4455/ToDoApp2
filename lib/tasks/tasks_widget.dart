@@ -4,6 +4,7 @@ import '/components/add_task_widget.dart';
 import '/components/task_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'tasks_model.dart';
 export 'tasks_model.dart';
@@ -176,6 +177,33 @@ class _TasksWidgetState extends State<TasksWidget> {
                           },
                         );
                       },
+                    ),
+                  ),
+                  FFButtonWidget(
+                    onPressed: () {
+                      print('Button pressed ...');
+                    },
+                    text: 'Button',
+                    options: FFButtonOptions(
+                      height: 70.0,
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                      iconPadding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: const Color(0xFF9FE9B2),
+                      textStyle:
+                          FlutterFlowTheme.of(context).labelMedium.override(
+                                fontFamily: 'Inter',
+                                color: Colors.black,
+                                fontSize: 20.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                      elevation: 0.0,
+                      borderSide: const BorderSide(
+                        color: Colors.black,
+                      ),
+                      borderRadius: BorderRadius.circular(24.0),
                     ),
                   ),
                 ].divide(const SizedBox(height: 12.0)),
