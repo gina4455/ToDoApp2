@@ -179,31 +179,39 @@ class _TasksWidgetState extends State<TasksWidget> {
                       },
                     ),
                   ),
-                  FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
-                    },
-                    text: 'Button',
-                    options: FFButtonOptions(
-                      height: 70.0,
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                      iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: const Color(0xFF9FE9B2),
-                      textStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Inter',
-                                color: Colors.black,
-                                fontSize: 20.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FontWeight.w500,
-                              ),
-                      elevation: 0.0,
-                      borderSide: const BorderSide(
-                        color: Colors.black,
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 0.0, 0.0),
+                    child: FFButtonWidget(
+                      onPressed: () async {
+                        GoRouter.of(context).prepareAuthEvent();
+                        await authManager.signOut();
+                        GoRouter.of(context).clearRedirectLocation();
+
+                        context.goNamedAuth('Login', context.mounted);
+                      },
+                      text: 'Logout',
+                      options: FFButtonOptions(
+                        height: 50.0,
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 16.0, 0.0),
+                        iconPadding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: const Color(0xFF9FE9B2),
+                        textStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Inter',
+                                  color: Colors.black,
+                                  fontSize: 20.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                        elevation: 0.0,
+                        borderSide: const BorderSide(
+                          color: Colors.black,
+                        ),
+                        borderRadius: BorderRadius.circular(24.0),
                       ),
-                      borderRadius: BorderRadius.circular(24.0),
                     ),
                   ),
                 ].divide(const SizedBox(height: 12.0)),
